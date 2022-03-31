@@ -62,6 +62,8 @@ export const PAYMONGO_PAYMENT_URL = WEBSITE_URL + "/public/api/payment/process-p
 
 export const MERCADOPAGO_PAYMENT_URL = WEBSITE_URL + "/public/api/payment/process-mercado-pago";
 
+export const TELR_PAYMENT_URL =  WEBSITE_URL + "/public/api/payment/process-telr";
+
 export const KHALTI_PAYMENT_VERIFICATION_URL = WEBSITE_URL + "/public/api/payment/verify-khalti-payment";
 
 export const GET_REVIEWS_OF_STORE_URL = WEBSITE_URL + "/public/api/get-store-reviews";

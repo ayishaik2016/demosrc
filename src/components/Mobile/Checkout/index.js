@@ -27,6 +27,7 @@ class Checkout extends Component {
 				.getPaymentGateways(user.data.auth_token, localStorage.getItem("activeRestaurant"))
 				.then((response) => {
 					if (response && response.payload) {
+						console.log('--',response)
 						this.setState({ gateways_received: true });
 					} else {
 						console.error("fetching payment gateways failed... trying again after 2.5s");
@@ -126,6 +127,7 @@ class Checkout extends Component {
 						google={this.props.google}
 					/>
 				</div>
+	
 			</React.Fragment>
 		);
 	}

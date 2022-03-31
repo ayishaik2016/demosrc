@@ -451,7 +451,7 @@ class ItemList extends Component {
 														)}
 													</span>
 													{item.desc !== null ? (
-														<div className="item-desc-short">
+														<React.Fragment>
 															<ShowMore
 																lines={1}
 																more={localStorage.getItem("showMoreButtonText")}
@@ -464,7 +464,7 @@ class ItemList extends Component {
 																	}}
 																/>
 															</ShowMore>
-														</div>
+														</React.Fragment>
 													) : null}
 												</div>
 

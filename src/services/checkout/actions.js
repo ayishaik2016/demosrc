@@ -49,7 +49,7 @@ export const placeOrder = (
 				dispatch({ type: PLACE_ORDER, payload: checkout });
 
 				const state = getState();
-				// console.log(state);
+				console.log(state);
 				const cartProducts = state.cart.products;
 				// const user = state.user.user;
 				localStorage.removeItem("orderComment");

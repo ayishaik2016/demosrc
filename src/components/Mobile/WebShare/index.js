@@ -4,16 +4,10 @@ import Ink from "react-ink";
 class WebShare extends Component {
 	state = {
 		shareButton: false,
-		androidShareButton: false,
 	};
 	componentDidMount() {
 		if (navigator.share) {
 			this.setState({ shareButton: true });
-		}
-		if (navigator.userAgent === "FoodomaaAndroidWebViewUA") {
-			if (window.Android !== "undefined") {
-				this.setState({ shareButton: false, androidShareButton: true });
-			}
 		}
 	}
 	shareLink = (data) => {
@@ -27,34 +21,15 @@ class WebShare extends Component {
 		}
 	};
 
-	shareLinkViaAndroidApp = (data) => {
-		if (navigator.userAgent === "FoodomaaAndroidWebViewUA") {
-			if (window.Android !== "undefined") {
-				window.Android.shareDataThroughIntent(data.link);
-			}
-		}
-	};
-
 	render() {
 		return (
 			<React.Fragment>
 				{this.state.shareButton && (
 					<button
 						type="button"
-						className="btn search-navs-btns nav-share-btn"
+						className="btn search-navs-btns nav-home-btn"
 						style={{ position: "relative" }}
 						onClick={() => this.shareLink(this.props)}
-					>
-						<i className="si si-share" />
-						<Ink duration="500" />
-					</button>
-				)}
-				{this.state.androidShareButton && (
-					<button
-						type="button"
-						className="btn search-navs-btns nav-share-btn"
-						style={{ position: "relative" }}
-						onClick={() => this.shareLinkViaAndroidApp(this.props)}
 					>
 						<i className="si si-share" />
 						<Ink duration="500" />

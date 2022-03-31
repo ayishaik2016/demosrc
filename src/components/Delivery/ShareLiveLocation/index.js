@@ -37,13 +37,17 @@ class ShareLiveLocation extends Component {
 	}
 
 	__sendGpsLocation = (position) => {
-		this.props.sendDeliveryGuyGpsLocation(
-			this.props.delivery_user.data.auth_token,
-			this.props.delivery_user.data.id,
-			position.coords.latitude,
-			position.coords.longitude,
-			position.coords.heading
-		);
+		if (navigator.userAgent === "FoodomaaAndroidWebViewUA" && window.Android !== "undefined") {
+			//do nothing
+		} else {
+			this.props.sendDeliveryGuyGpsLocation(
+				this.props.delivery_user.data.auth_token,
+				this.props.delivery_user.data.id,
+				position.coords.latitude,
+				position.coords.longitude,
+				position.coords.heading
+			);
+		}
 	};
 
 	componentWillUnmount() {

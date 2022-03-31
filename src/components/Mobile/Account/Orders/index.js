@@ -93,10 +93,6 @@ class Orders extends Component {
 		}
 	}
 
-	componentWillUnmount() {
-		this.removeScrollEvent();
-	}
-
 	render() {
 		if (window.innerWidth > 768) {
 			return <Redirect to="/" />;

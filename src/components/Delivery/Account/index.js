@@ -190,10 +190,6 @@ class Account extends Component {
 		});
 	};
 
-	componentWillUnmount() {
-		this.removeScrollEvent();
-	}
-
 	render() {
 		const { delivery_user, order_history } = this.props;
 		return (

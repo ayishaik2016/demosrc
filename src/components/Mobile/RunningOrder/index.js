@@ -108,7 +108,7 @@ class RunningOrder extends Component {
 				/>
 				{user.running_order && (
 					<React.Fragment>
-						{localStorage.getItem("showMap") === "true" && user.running_order.delivery_type === 1 && (
+						{localStorage.getItem("showMap") === "true" && (
 							<Map
 								restaurant_latitude={user.running_order.restaurant.latitude}
 								restaurant_longitude={user.running_order.restaurant.longitude}
@@ -122,50 +122,10 @@ class RunningOrder extends Component {
 							className="bg-white height-100"
 							style={{
 								position: "absolute",
-								top:
-									localStorage.getItem("showMap") === "true" && user.running_order.delivery_type === 1
-										? "26.3rem"
-										: "4rem",
+								top: localStorage.getItem("showMap") === "true" ? "26.3rem" : "4rem",
 								width: "100%",
 							}}
 						>
-							{user.running_order.delivery_type === 2 && (
-								<div className="block-content block-content-full clearfix py-0 mt-30">
-									<div className="d-flex">
-										<div className="pr-15">
-											<img
-												src={user.running_order.restaurant.image}
-												alt={user.running_order.restaurant.name}
-												className="restaurant-image mt-0"
-											/>
-										</div>
-
-										<div className="mt-5 pb-15 w-100">
-											<h4 className="font-w600 mb-5 text-dark">
-												{user.running_order.restaurant.name}
-											</h4>
-											<div className="font-size-sm text-muted truncate-text text-muted">
-												{user.running_order.restaurant.address}
-											</div>
-											<div
-												onClick={() =>
-													this.__getDirectionToRestaurant(
-														user.running_order.restaurant.latitude,
-														user.running_order.restaurant.longitude
-													)
-												}
-												className="mt-10"
-											>
-												<button className="btn btn-get-direction">
-													<i className="si si-action-redo mr-5" />
-													{localStorage.getItem("deliveryGetDirectionButton")}
-												</button>
-											</div>
-										</div>
-									</div>
-									<hr />
-								</div>
-							)}
 							{this.state.show_delivery_details && (
 								<div className="block block-link-shadow pb-2 m-0 delivery-assigned-block">
 									<div className="block-content block-content-full clearfix py-0">
@@ -575,6 +535,19 @@ class RunningOrder extends Component {
 																{localStorage.getItem("runningOrderReadyForPickupSub")}
 															</div>
 														</div>
+
+														<button
+															className="btn btn-get-direction mt-2"
+															onClick={() =>
+																this.__getDirectionToRestaurant(
+																	user.running_order.restaurant.latitude,
+																	user.running_order.restaurant.longitude
+																)
+															}
+														>
+															<i className="si si-action-redo mr-5" />
+															{localStorage.getItem("deliveryGetDirectionButton")}
+														</button>
 													</div>
 												</div>
 											</div>

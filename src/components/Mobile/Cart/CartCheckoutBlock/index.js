@@ -118,42 +118,22 @@ class CartCheckoutBlock extends Component {
 				>
 					{user.success ? (
 						user.data.default_address == null ? (
-							<React.Fragment>
-								{localStorage.getItem("userSelected") === "SELFPICKUP" && (
-									<div style={{ marginTop: "1.6rem" }}>
-										<div
-											onClick={this.processCart}
-											className="btn btn-lg btn-make-payment"
-											style={{
-												backgroundColor: localStorage.getItem("cartColorBg"),
-												color: localStorage.getItem("cartColorText"),
-												position: "relative",
-											}}
-										>
-											{localStorage.getItem("checkoutSelectPayment")}
-											<Ink duration={400} />
-										</div>
-									</div>
-								)}
-								{localStorage.getItem("userSelected") === "DELIVERY" && (
-									<div className="p-15">
-										<h2 className="almost-there-text m-0 pb-5">
-											{localStorage.getItem("cartSetYourAddress")}
-										</h2>
-										<button
-											onClick={this.gotoNewAddressPage}
-											className="btn btn-lg btn-continue"
-											style={{
-												position: "relative",
-												backgroundColor: localStorage.getItem("storeColor"),
-											}}
-										>
-											{localStorage.getItem("buttonNewAddress")}
-											<Ink duration={500} />
-										</button>
-									</div>
-								)}
-							</React.Fragment>
+							<div className="p-15">
+								<h2 className="almost-there-text m-0 pb-5">
+									{localStorage.getItem("cartSetYourAddress")}
+								</h2>
+								<button
+									onClick={this.gotoNewAddressPage}
+									className="btn btn-lg btn-continue"
+									style={{
+										position: "relative",
+										backgroundColor: localStorage.getItem("storeColor"),
+									}}
+								>
+									{localStorage.getItem("buttonNewAddress")}
+									<Ink duration={500} />
+								</button>
+							</div>
 						) : (
 							<React.Fragment>
 								{(localStorage.getItem("userSelected") === "DELIVERY" ||
@@ -182,7 +162,6 @@ class CartCheckoutBlock extends Component {
 										</div>
 									</React.Fragment>
 								)}
-
 								<React.Fragment>
 									{this.props.is_operational ? (
 										<div style={{ marginTop: "1.6rem" }}>

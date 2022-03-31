@@ -109,7 +109,7 @@ class RestaurantInfo extends Component {
 						<React.Fragment>
 							<Link
 								to={"../../stores/" + restaurant.slug}
-								className={`store-info-itemspage ${this.state.withLinkToRestaurant ? "" : "no-click"}`}
+								className={this.state.withLinkToRestaurant ? "" : "no-click"}
 							>
 								<div className="d-flex pt-50">
 									<div className="px-15 mt-5">

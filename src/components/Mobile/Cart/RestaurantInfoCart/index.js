@@ -123,7 +123,7 @@ class RestaurantInfoCart extends Component {
 						</ContentLoader>
 					) : (
 						<React.Fragment>
-							<div className="bg-light pb-10 d-flex store-info-cartpage" style={{ paddingTop: "5rem" }}>
+							<div className="bg-light pb-10 d-flex" style={{ paddingTop: "5rem" }}>
 								<div className="px-15 mt-5">
 									<img
 										src={restaurant.image}

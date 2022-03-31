@@ -68,6 +68,12 @@ const Checkout = Loadable({
 	loading: () => <Loading />,
 });
 
+// import Checkout from "./components/Mobile/Checkout";
+const Success = Loadable({
+	loader: () => import("./components/Mobile/Checkout/Telr/Success"),
+	loading: () => <Loading />,
+});
+
 // import RunningOrder from "./components/Mobile/RunningOrder";
 const RunningOrder = Loadable({
 	loader: () => import("./components/Mobile/RunningOrder"),
@@ -213,6 +219,7 @@ ReactDOM.render(
 					<Route path={"/reviews/:slug"} exact component={withTracker(ViewStoreReviews)} />
 
 					<Route path={"/checkout"} exact component={withTracker(Checkout)} />
+					<Route path={"/telr/success"} exact component={Success} />
 					<Route path={"/running-order/:unique_order_id"} exact component={withTracker(RunningOrder)} />
 
 					<Route path={"/cart"} exact component={withTracker(CartPage)} />

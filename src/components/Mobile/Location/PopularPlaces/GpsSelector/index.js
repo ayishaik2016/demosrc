@@ -36,9 +36,7 @@ class GpsSelector extends Component {
 					this.setState({ gps_loading: false });
 					this.stopLoading();
 					console.log(error);
-					if (navigator.userAgent !== "FoodomaaAndroidWebViewUA") {
-						alert(localStorage.getItem("gpsAccessNotGrantedMsg"));
-					}
+					alert(localStorage.getItem("gpsAccessNotGrantedMsg"));
 				},
 				{ timeout: 5000 }
 			);

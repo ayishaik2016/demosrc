@@ -45,11 +45,9 @@ class Orders extends Component {
 		if (delivery_orders.new_orders) {
 			if (newProps.delivery_orders.new_orders.length > delivery_orders.new_orders.length) {
 				//new orders received,
-				if (navigator.userAgent !== "FoodomaaAndroidWebViewUA") {
-					this.audio.play();
-					if ("vibrate" in navigator) {
-						navigator.vibrate(["100", "150", "100", "100", "150", "100"]);
-					}
+				this.audio.play();
+				if ("vibrate" in navigator) {
+					navigator.vibrate(["100", "150", "100", "100", "150", "100"]);
 				}
 			}
 		}

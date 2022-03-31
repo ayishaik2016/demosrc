@@ -34,7 +34,7 @@ class PopularPlaces extends Component {
 							)}
 
 							{locations.map((location, index) => (
-								<Flip top delay={index * 80} key={location.id}>
+								<Flip top delay={index * 50} key={location.id}>
 									<button
 										type="button"
 										className="btn btn-rounded btn-alt-secondary btn-md mb-15 mr-15"

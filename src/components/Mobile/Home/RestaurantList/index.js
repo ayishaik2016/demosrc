@@ -393,7 +393,7 @@ class RestaurantList extends Component {
 												<DelayLink
 													to={"../stores/" + restaurant.slug}
 													delay={200}
-													className="block text-center mb-3 single-store-homepage"
+													className="block text-center mb-3"
 													clickAction={() => {
 														localStorage.getItem("userPreferredSelection") === "DELIVERY" &&
 															restaurant.delivery_type === 1 &&
